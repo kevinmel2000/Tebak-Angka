@@ -17,8 +17,10 @@ class ViewController: UIViewController {
         
         let randomNumber = String(arc4random_uniform(9) + 1)
         
-        if (userInput.text?.isEmpty)! {
-            
+        if (userInput.text?.isEmpty)! ||
+            Int(userInput.text!)! < 1 ||
+            Int(userInput.text!)! > 10
+        {
             resultLabel.text = "Masukkan hanya angka 1-10"
             
             return
